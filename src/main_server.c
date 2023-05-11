@@ -6,7 +6,7 @@
 /*   By: ahooghe <ahooghe@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 10:33:29 by ahooghe           #+#    #+#             */
-/*   Updated: 2023/04/03 13:38:14 by ahooghe          ###   ########.fr       */
+/*   Updated: 2023/04/05 18:27:47 by ahooghe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(void)
 	struct sigaction	act;
 
 	pid = getpid();
-	ft_printf("PID: %d", pid);
+	ft_printf("PID: %d\n\n", pid);
 	act.sa_sigaction = action;
 	sigemptyset(&act.sa_mask);
 	act.sa_flags = SA_SIGINFO;

@@ -6,7 +6,7 @@
 #    By: ahooghe <ahooghe@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 12:14:40 by ahooghe           #+#    #+#              #
-#    Updated: 2023/04/03 14:10:38 by ahooghe          ###   ########.fr        #
+#    Updated: 2023/04/05 18:26:39 by ahooghe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,11 +59,11 @@ all: $(OBJECTS) $(LIBOBJECTS)
 ifeq ($(TARGET_TYPE),exe)
 	$(NAME) $(LIBOBJECTS) $(OBJECTS)
 		$(CC) $(CFLAGS) $(LIBOBJECTS) $(OBJECTS) -o $(NAME)
-			@echo "$(GREEN)Executable file $(YELLOW)'$(NAME)'$(GREEN) created.$(RESET)"
+			@echo "$(GREEN)Executable file $(YELLOW)'$(NAME)'$(GREEN) created.\n\n$(RESET)"
 else ifeq ($(TARGET_TYPE),lib)
 	$(if $(findstring .a,$(NAME)),,$(eval NAME := $(NAME).a))
 		$(AR) $(ARFLAGS) $(NAME) $(LIBOBJECTS) $(OBJECTS)
-		@echo "$(GREEN)Archive file $(YELLOW)'$(NAME)'$(GREEN) created.$(RESET)"
+		@echo "$(GREEN)Archive file $(YELLOW)'$(NAME)'$(GREEN) created.\n\n$(RESET)"
 else
 	@echo "$(RED)TARGET_TYPE not set correctly. Set TARGET_TYPE=exe or TARGET_TYPE=lib to build an executable or library respectively$(RESET)"
 endif
